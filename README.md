@@ -1,4 +1,4 @@
-# Daily Patterns Pack
+# Daily Patterns Pack for Claude Code + Obsidian
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Claude Code](https://img.shields.io/badge/Claude_Code-Compatible-blue)](https://claude.ai/claude-code)
@@ -6,7 +6,7 @@
 
 ![Architecture](docs/images/architecture-diagram.png)
 
-**Turn your daily notes into a system that learns you.**
+**Turn your daily notes into a system that learns how you work.**
 
 A two-tool feedback loop: capture what you do, discover what you should automate.
 
