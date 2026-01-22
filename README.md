@@ -6,6 +6,10 @@
 
 ![Architecture](docs/images/architecture-diagram.png)
 
+## Demo Video
+
+[![How 3 Weeks of Daily Notes Built My AI Agents](https://img.youtube.com/vi/ZztxFamiMa8/maxresdefault.jpg)](https://www.youtube.com/watch?v=ZztxFamiMa8)
+
 **Turn your daily notes into a system that learns how you work.**
 
 A two-tool feedback loop: capture what you do, discover what you should automate.
