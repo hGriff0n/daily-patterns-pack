@@ -4,6 +4,8 @@
 [![Claude Code](https://img.shields.io/badge/Claude_Code-Compatible-blue)](https://claude.ai/claude-code)
 [![Obsidian](https://img.shields.io/badge/Obsidian-Required-purple)](https://obsidian.md)
 
+![Architecture](docs/images/architecture-diagram.png)
+
 **Turn your daily notes into a system that learns you.**
 
 A two-tool feedback loop: capture what you do, discover what you should automate.
