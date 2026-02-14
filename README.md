@@ -29,9 +29,9 @@ Claude doesn't remember between sessions. Your daily notes do—but only if you 
 
 Two tools. One feedback loop.
 
-### `/log-to-daily` — Capture
+### `/daily:log` — Capture
 
-At the end of each session, run `/log-to-daily`. Claude analyzes your conversation and appends a structured log to today's daily note:
+At the end of each session, run `/daily:log`. Claude analyzes your conversation and appends a structured log to today's daily note:
 
 ```markdown
 ## Session Log - 2:45 PM
@@ -105,7 +105,7 @@ Week 12: Your system now handles things you used to do manually. Your logs shift
 
 ## Requirements
 
-- **Daily notes in Obsidian** — Format: `00 Daily/YYYY/YYYYMMDD.md` (configurable)
+- **Daily notes in Obsidian** (configurable)
 - **Claude Code** — These are Claude Code skills/agents
 - **Consistency** — The system learns from repetition. Sporadic logging = weak patterns.
 
@@ -121,15 +121,7 @@ Week 12: Your system now handles things you used to do manually. Your logs shift
 
 ## Configuration
 
-Edit the daily note path in `log-to-daily/SKILL.md`:
-
-```markdown
-<daily_note_location>
-Path: `00 Daily/YYYY/YYYYMMDD.md`
-</daily_note_location>
-```
-
-Adjust to match your vault structure.
+Edit the daily note path in `commands/log.md` to match your vault structure.
 
 ## Usage
 
@@ -137,13 +129,13 @@ Adjust to match your vault structure.
 
 ```
 # End of session
-/log-to-daily
+/daily:log
 
 # After significant work
-/log-to-daily
+/daily:log
 
 # When you made an important decision
-/log-to-daily
+/daily:log
 ```
 
 ### Pattern Analysis
@@ -189,12 +181,15 @@ Your daily notes become training data—not for an AI model, but for your person
 
 ```
 daily-patterns-pack/
+├── .claude-plugin/
+│   └── plugin.json
 ├── agents/
 │   └── vault-analyst.md
+├── commands/
+│   └── log.md
 ├── skills/
 │   └── log-to-daily/
 │       └── SKILL.md
-├── install.sh
 ├── LICENSE
 └── README.md
 ```
