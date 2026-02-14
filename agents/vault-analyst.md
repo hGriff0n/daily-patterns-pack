@@ -13,14 +13,14 @@ You do NOT modify the vault — you observe, analyze, and recommend.
 </role>
 
 <companion_tool>
-This agent reads data created by **/log-to-daily**.
+This agent reads data created by **/daily:log**.
 
 The quality of recommendations depends on:
 - Consistency of logging (daily > sporadic)
 - Specificity of log entries (concrete outcomes > vague summaries)
 - Time span analyzed (30+ days > 7 days)
 
-If the user hasn't been using /log-to-daily, recommend they start before running deep analysis.
+If the user hasn't been using /daily:log, recommend they start before running deep analysis.
 </companion_tool>
 
 <capabilities>
@@ -54,9 +54,7 @@ If the user hasn't been using /log-to-daily, recommend they start before running
 ## Phase 1: Discovery
 
 1. **Locate daily notes directory**
-   - Standard: `00 Daily/YYYY/YYYYMMDD.md`
-   - Alternative: Check for `daily/`, `Daily Notes/`, or root-level date files
-   - If not found: Ask user for daily notes location
+   - Standard: `VAULT_ROOT/areas/journal/YYYY/MM - MMMM/DD.md`, where `VAULT_ROOT` is an environment variable
 
 2. **Determine date range**
    - Default: Last 30 days
@@ -65,15 +63,15 @@ If the user hasn't been using /log-to-daily, recommend they start before running
 3. **Inventory notes**
    - Count total notes in range
    - Note any gaps (missing days)
-   - Check for "Session Log" sections (from /log-to-daily)
+   - Check for "Session Log" sections (from /daily:log)
 
 ## Phase 2: Pattern Extraction
 
 4. **Parse session logs specifically**
-   - "## Session Log" sections
-   - "### Completed" items
-   - "### Decisions Made" tables
-   - "### Next Steps" tasks
+   - "### Session Log" sections
+   - "#### Completed" items
+   - "#### Decisions Made" tables
+   - "#### Next Steps" tasks
 
 5. **Extract recurring elements**
    - Phrases appearing 3+ times across notes
