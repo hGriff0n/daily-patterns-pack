@@ -62,6 +62,29 @@ At the end of each session, run `/daily:log`. Claude analyzes your conversation 
 - Files created/modified (with wiki links)
 - Follow-up tasks
 
+#### `Precompact` Hook - Automation
+
+Can install a hook to automatically log the session's work before Claude Code compacts the conversation. You still need to manually run `/daily:log` when you decide to end the session, but this covers a bunch of situations that are easy to forget about.
+
+**INSTALL: Use the interactive command**
+
+```bash
+/hooks
+```
+
+Then select:
+- Hook event: `PreCompact`
+- Matcher: `auto` (for automatic compaction) or `manual` (for `/compact` command)
+- Command: `bash ~/.claude/hooks/precompact.sh`
+
+**Verify hook configuration**
+
+Check that your settings file contains the hook configuration:
+
+```bash
+cat ~/.claude/settings.json | grep -A 10 "PreCompact"
+```
+
 ### `@vault-analyst` — Discover
 
 After a few weeks of logs, run `@vault-analyst`. It reads your daily notes and surfaces:
