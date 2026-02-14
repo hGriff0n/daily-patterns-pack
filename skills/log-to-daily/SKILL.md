@@ -1,8 +1,7 @@
 ---
 name: log-to-daily
-description: Log conversation activity to today's daily note on demand. Use when wrapping up work, capturing decisions, or documenting session outcomes.
-use_when: User asks to log to daily note, capture session activity, document what was done, or record decisions made during the conversation.
-user-invocable: true
+description: Log conversation activity to today's daily note on demand. Use when wrapping up work, capturing decisions, or documenting session outcomes. Use when the user asks to log to daily note, capture session activity, document what was done, or record decisions made during the conversation.
+disable-model-invocation: true
 ---
 
 <objective>

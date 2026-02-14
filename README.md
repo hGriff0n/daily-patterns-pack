@@ -112,16 +112,11 @@ Week 12: Your system now handles things you used to do manually. Your logs shift
 ## Installation
 
 ```bash
-# Clone the pack
-git clone https://github.com/aplaceforallmystuff/daily-patterns-pack.git
-cd daily-patterns-pack
+# Install marketplace
+/plugin marketplace add hgriff0n/my-claude-plugins
 
-# Run the installer
-./install.sh
-
-# Or manually copy
-cp -r skills/log-to-daily ~/.claude/skills/
-cp agents/vault-analyst.md ~/.claude/agents/
+# Install Plugin
+/plugin install daily-patterns@my-claude-plugins
 ```
 
 ## Configuration
