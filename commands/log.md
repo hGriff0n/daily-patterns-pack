@@ -11,8 +11,6 @@ This command writes to the daily journal file at `VAULT_ROOT/areas/journal/YYYY/
 
 <log_format>
 ```markdown
----
-
 ### Session Log - [TIME]
 
 **Focus:** [1-2 sentence summary of main work]
@@ -32,7 +30,6 @@ This command writes to the daily journal file at `VAULT_ROOT/areas/journal/YYYY/
 #### Next Steps
 - [Follow-up task if any]
 
----
 ```
 </log_format>
 
