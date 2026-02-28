@@ -71,13 +71,13 @@ Generate markdown suitable for a daily note:
 
 ### 5. Append to Daily Note
 
-Once the markdown is composed, append it to today's daily note via the Obsidian CLI:
+Once the markdown is composed, ensure the daily note exists, then append:
 
-```bash
-obsidian daily:append content="## Claude Code Activity\n\n### Token Usage\n..."
-```
+1. `obsidian daily:path` → capture the path
+2. `obsidian file path="<path>"` → if output starts with `Error:`, run `obsidian create path="<path>"`
+3. `obsidian daily:append content="## Claude Code Activity\n\n### Token Usage\n..."`
 
-Use `\n` for newlines in the content parameter. The CLI automatically finds today's note.
+Use `\n` for newlines in the content parameter.
 
 ## Key Rules
 

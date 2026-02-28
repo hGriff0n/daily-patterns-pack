@@ -5,10 +5,6 @@ allowed-tools: Bash
 
 Append a structured summary of current session activity to today's daily note, providing the data layer the vault-analyst reads to discover your work patterns.
 
-<output_file>
-This command appends to today's daily note via `obsidian daily:append`. The CLI automatically locates the correct file based on Obsidian's daily notes settings — no path construction or VAULT_ROOT needed.
-</output_file>
-
 <log_format>
 ```markdown
 ### Session Log - [TIME]
@@ -45,11 +41,13 @@ This command appends to today's daily note via `obsidian daily:append`. The CLI 
    - Include timestamp (user's local time)
    - Be specific about outcomes, not activities
    - Link to created files with `[[wikilinks]]`
+   - Ensure the daily note exists first:
+     1. `obsidian daily:path` → capture the path
+     2. `obsidian file path="<path>"` → if output starts with `Error:`, run `obsidian create path="<path>"`
    - Use `\n` for newlines and `\t` for tabs in the content parameter:
    ```bash
    obsidian daily:append content="### Session Log - 2:45 PM\n\n**Focus:** ...\n\n#### Completed\n- Item 1\n\n---"
    ```
-   The CLI automatically finds or creates today's daily note.
 
 3. **Confirm** what was logged
 </workflow_steps>

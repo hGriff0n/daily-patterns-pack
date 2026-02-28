@@ -78,7 +78,7 @@ If the user hasn't been using /daily:log, recommend they start before running de
    ```bash
    obsidian read path="areas/journal/2026/02 - February/28.md"
    ```
-   For large ranges (30+ days), use a subagent (Task tool with subagent_type=Explore) to read the files in parallel rather than sequentially.
+   For large ranges (30+ days), use a subagent (Task tool with subagent_type=Explore) to read the files in parallel rather than sequentially. Ignore any "file not found" errors
 
 4. **Inventory notes**
    - Count total notes found vs dates in range (gaps = missing days)
