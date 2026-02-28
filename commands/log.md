@@ -1,12 +1,12 @@
 ---
 description: Log conversation activity to today's daily note
-allowed-tools: Bash, Read, Write
+allowed-tools: Bash
 ---
 
 Append a structured summary of current session activity to today's daily note, providing the data layer the vault-analyst reads to discover your work patterns.
 
 <output_file>
-This command writes to the daily journal file at `VAULT_ROOT/areas/journal/YYYY/MM - MMMM/DD.md`, where `VAULT_ROOT` is an environment variable
+This command appends to today's daily note via `obsidian daily:append`. The CLI automatically locates the correct file based on Obsidian's daily notes settings — no path construction or VAULT_ROOT needed.
 </output_file>
 
 <log_format>
@@ -41,17 +41,17 @@ This command writes to the daily journal file at `VAULT_ROOT/areas/journal/YYYY/
    - Decisions made and their rationale
    - Outstanding items or next steps
 
-2. **Locate today's daily note**
-   - Check default path: `VAULT_ROOT/areas/journal/YYYY/MM - MMMM/DD.md`, where `VAULT_ROOT` is an environment variable
-   - Create if it doesn't exist by copying `VAULT_ROOT/areas/__metadata/templates/daily.md`
-   - If path unclear, ask user
-
-3. **Append the session log** to the "Session Logs" section using the <log_format/> above
+2. **Append the session log** using the <log_format/> above via the Obsidian CLI:
    - Include timestamp (user's local time)
    - Be specific about outcomes, not activities
    - Link to created files with `[[wikilinks]]`
+   - Use `\n` for newlines and `\t` for tabs in the content parameter:
+   ```bash
+   obsidian daily:append content="### Session Log - 2:45 PM\n\n**Focus:** ...\n\n#### Completed\n- Item 1\n\n---"
+   ```
+   The CLI automatically finds or creates today's daily note.
 
-4. **Confirm** what was logged
+3. **Confirm** what was logged
 </workflow_steps>
 
 <quality_guidelines>
@@ -98,8 +98,8 @@ This command writes to the daily journal file at `VAULT_ROOT/areas/journal/YYYY/
 </example_output>
 
 <success_criteria>
-- [ ] Today's daily note exists (create if not)
-- [ ] Session log appended with separator
+- [ ] Session log appended to today's daily note via `obsidian daily:append`
+- [ ] Entry ends with `\n\n---` separator
 - [ ] Specific outcomes documented (not just activities)
 - [ ] Any created files linked with wikilinks
 - [ ] User informed of what was logged

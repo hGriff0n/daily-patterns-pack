@@ -1,6 +1,6 @@
 ---
 description: Generate a summary of today's Claude Code activity including token usage and tasks accomplished.
-allowed-tools: Bash, Read, Write
+allowed-tools: Bash
 ---
 
 # Today in Claude Code
@@ -68,6 +68,16 @@ Generate markdown suitable for a daily note:
 - Quick fixes, minor tweaks, small config changes
 - Keep this section concise
 ```
+
+### 5. Append to Daily Note
+
+Once the markdown is composed, append it to today's daily note via the Obsidian CLI:
+
+```bash
+obsidian daily:append content="## Claude Code Activity\n\n### Token Usage\n..."
+```
+
+Use `\n` for newlines in the content parameter. The CLI automatically finds today's note.
 
 ## Key Rules
 
